@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart(){
         //reload scene
-        EditorSceneManager.LoadScene(0);
+        SceneManager.LoadScene("FlappyBird");
     }
 
     public void AddScore(){
