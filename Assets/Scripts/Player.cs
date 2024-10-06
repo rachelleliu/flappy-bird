@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 {
     public float flapForce = 5.0f; //set force of flap
     private Rigidbody2D rb; //reference to player rigidbody
+
+    public GameManager gameManager; //reference to game manager
+    public bool lost = false; //set if player lost
     
     // Start is called before the first frame update
     void Start()
@@ -21,5 +24,11 @@ public class Player : MonoBehaviour
         if(Input.GetButtonDown("Jump")){
             rb.AddForce(Vector2.up * flapForce, ForceMode2D.Impulse);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        //set lost to true and call GameOver function
+        lost = true;
+        gameManager.GameOver();    
     }
 }
