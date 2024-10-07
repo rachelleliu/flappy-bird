@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
 
     public GameManager gameManager; //reference to game manager
     public bool lost = false; //set if player lost
+
+    //game sounds
+    public AudioSource flapSound;
+    public AudioSource loseSound;
     
     // Start is called before the first frame update
     void Start()
@@ -23,11 +27,13 @@ public class Player : MonoBehaviour
         //flap bird up if spacebar or left mouse is hit        
         if(Input.GetButtonDown("Jump")){
             rb.AddForce(Vector2.up * flapForce, ForceMode2D.Impulse);
+            flapSound.Play();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         //set lost to true and call GameOver function
+        loseSound.Play();
         lost = true;
         gameManager.GameOver();    
     }

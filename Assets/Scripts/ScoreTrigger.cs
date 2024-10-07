@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreTrigger : MonoBehaviour
 {
     public GameManager gameManager; //ref to game manager
+    public AudioSource pointSound; //sound plays when point scored
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class ScoreTrigger : MonoBehaviour
         //increment the score counter if the player is detected
         if(other.CompareTag("Player")){
             gameManager.AddScore();
+            pointSound.Play();
         }
     }
 }
