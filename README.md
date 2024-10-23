@@ -1,5 +1,5 @@
 # Flappy Bird
-super simple flappy bird clone for the 20 games challenge (game #1)
+super simple flappy bird clone as my first game made with Unity
 
 ## live demo
 play it here: https://rachelleliu.github.io/flappy-bird
@@ -12,6 +12,7 @@ play it here: https://rachelleliu.github.io/flappy-bird
 - Unity
 - C#
 - WebGL
+- a little HTML/CSS
 
 ## things I learned
 - creating a simple game in Unity from start to finish
